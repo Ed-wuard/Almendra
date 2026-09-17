@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Almendra Store | Calzado para todos los días</title>
+  <meta name="description" content="Calzado elegido para caminar tu día. Consultá talles, colores y disponibilidad por WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#20201d; --paper:#f6f3ed; --lime:#d8f36b; --orange:#f47747; --muted:#77756f; --line:#dedbd2; --white:#fffdf9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
+    button, input { font:inherit; }
+    button { cursor:pointer; }
+    .shell { max-width:1240px; margin:auto; padding:0 32px; }
+    header { background:var(--ink); color:var(--paper); min-height:640px; position:relative; overflow:hidden; }
+    header:after { content:""; position:absolute; width:540px; height:540px; right:-130px; top:-260px; border:1px solid rgba(246,243,237,.24); border-radius:50%; box-shadow:0 0 0 42px rgba(246,243,237,.05), 0 0 0 84px rgba(246,243,237,.04); }
+    .topbar { height:82px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; border-bottom:1px solid rgba(246,243,237,.18); }
+    .logo { color:var(--paper); text-decoration:none; font:700 28px "Fraunces",serif; letter-spacing:-1px; }
+    .logo span { color:var(--lime); }
+    .nav { display:flex; gap:30px; align-items:center; }
+    .nav a { color:var(--paper); text-decoration:none; font-size:14px; opacity:.78; }
+    .nav a:hover { opacity:1; }
+    .cart-button { border:1px solid rgba(246,243,237,.36); background:transparent; color:var(--paper); border-radius:99px; padding:10px 16px; display:flex; gap:9px; align-items:center; }
+    .cart-icon { font-size:18px; line-height:1; }
+    .cart-count { min-width:21px; height:21px; border-radius:50%; display:grid; place-items:center; background:var(--lime); color:var(--ink); font-size:12px; font-weight:700; }
+    .floating-cart { position:fixed; right:24px; bottom:24px; z-index:4; width:58px; height:58px; border:0; border-radius:50%; display:grid; place-items:center; background:var(--orange); color:var(--ink); box-shadow:0 8px 24px rgba(32,32,29,.24); }
+    .floating-cart .cart-count { position:absolute; top:-4px; right:-4px; }
+    .hero { position:relative; z-index:1; display:grid; grid-template-columns:1.02fr .98fr; align-items:center; gap:56px; padding:78px 0 82px; }
+    .eyebrow { color:var(--lime); text-transform:uppercase; letter-spacing:2.5px; font-size:11px; font-weight:700; margin:0 0 20px; }
+    h1 { max-width:650px; font:600 clamp(54px,7vw,96px)/.95 "Fraunces",serif; letter-spacing:-4px; margin:0; }
+    .hero-copy { max-width:430px; margin:28px 0 34px; color:#c4c2bc; font-size:17px; line-height:1.6; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .primary { background:var(--lime); color:var(--ink); border:0; padding:15px 22px; border-radius:5px; font-weight:700; text-decoration:none; display:inline-block; }
+    .secondary { color:var(--paper); border:1px solid rgba(246,243,237,.4); padding:14px 22px; border-radius:5px; text-decoration:none; }
+    .hero-visual { min-height:360px; position:relative; display:flex; justify-content:center; align-items:center; }
+    .hero-visual img { width:min(100%,470px); aspect-ratio:1/1.08; object-fit:cover; border-radius:180px 180px 8px 8px; filter:saturate(.82); }
+    .hero-tag { position:absolute; background:var(--orange); color:var(--ink); width:110px; height:110px; border-radius:50%; display:grid; place-items:center; text-align:center; font-size:12px; font-weight:700; line-height:1.15; right:2%; bottom:0; transform:rotate(10deg); }
+    .store { padding:76px 0 110px; }
+    .section-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:36px; }
+    h2 { font:600 clamp(38px,5vw,62px)/1 "Fraunces",serif; letter-spacing:-2px; margin:0; }
+    .section-heading p { color:var(--muted); max-width:350px; margin:0; line-height:1.5; }
+    .controls { display:flex; flex-wrap:wrap; gap:12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 0; margin-bottom:32px; }
+    .search { flex:1 1 230px; min-width:200px; position:relative; }
+    .search input { width:100%; border:1px solid var(--line); border-radius:4px; background:var(--white); padding:12px 14px 12px 40px; color:var(--ink); outline:none; }
+    .search input:focus { border-color:var(--ink); }
+    .search span { position:absolute; left:14px; top:11px; color:var(--muted); }
+    .filter { background:transparent; border:1px solid var(--line); border-radius:4px; padding:11px 16px; color:var(--ink); }
+    .filter.active, .filter:hover { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .product-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+    .product { min-width:0; }
+    .product-image { background:#e6e3dc; aspect-ratio:1/.98; overflow:hidden; position:relative; margin-bottom:16px; }
+    .product-image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+    .product:hover img { transform:scale(1.045); }
+    .badge { position:absolute; top:12px; left:12px; background:var(--lime); padding:6px 9px; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    .product-info { display:flex; justify-content:space-between; gap:10px; align-items:start; }
+    .product h3 { font-size:16px; margin:0 0 5px; }
+    .product .meta { color:var(--muted); font-size:13px; }
+    .ask { border:0; background:var(--ink); color:var(--paper); border-radius:50%; width:34px; height:34px; flex:0 0 34px; font-size:17px; }
+    .ask:hover { background:var(--orange); color:var(--ink); }
+    .empty { grid-column:1/-1; text-align:center; padding:40px; color:var(--muted); display:none; }
+    .manifesto { background:var(--lime); padding:72px 0; }
+    .manifesto-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .manifesto h2 { max-width:500px; }
+    .manifesto p { max-width:440px; line-height:1.7; margin:0; }
+    footer { background:var(--ink); color:var(--paper); padding:48px 0; }
+    .footer-inner { display:flex; justify-content:space-between; gap:30px; align-items:start; }
+    footer p { color:#a8a69f; font-size:14px; line-height:1.6; max-width:300px; margin:12px 0 0; }
+    .contact { color:var(--lime); text-decoration:none; font-weight:700; }
+    .toast { position:fixed; left:50%; bottom:24px; transform:translate(-50%,120px); background:var(--ink); color:var(--paper); padding:15px 20px; border-radius:5px; box-shadow:0 8px 30px rgba(0,0,0,.18); transition:transform .25s ease; z-index:5; }
+    .toast.show { transform:translate(-50%,0); }
+    dialog { border:0; padding:0; width:min(520px,calc(100% - 32px)); border-radius:8px; color:var(--ink); background:var(--white); box-shadow:0 20px 70px rgba(0,0,0,.3); }
+    dialog::backdrop { background:rgba(32,32,29,.7); }
+    .order-modal { padding:28px; }
+    .step-label { color:var(--muted); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin:0 0 8px; }
+    .order-modal h2 { font-size:34px; letter-spacing:-1px; margin-bottom:8px; }
+    .order-modal > p { color:var(--muted); font-size:14px; line-height:1.5; margin:0 0 20px; }
+    .order-lines { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:10px 0; margin-bottom:20px; }
+    .order-line { display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:12px; padding:8px 0; font-size:14px; }
+    .quantity { display:flex; align-items:center; gap:8px; }
+    .quantity button { width:25px; height:25px; border:1px solid var(--line); border-radius:50%; background:transparent; line-height:1; }
+    .quantity button:hover { background:var(--ink); color:var(--paper); }
+    .order-summary-line, .order-total { display:flex; justify-content:space-between; gap:16px; padding:8px 0; font-size:14px; }
+    .order-summary-line { color:var(--muted); }
+    .order-total { border-top:1px solid var(--line); font-weight:700; font-size:17px; padding-top:14px; margin-top:4px; }
+    .order-form { display:grid; gap:12px; }
+    .order-form label { display:grid; gap:6px; color:var(--muted); font-size:12px; font-weight:600; }
+    .order-form input, .order-form select, .order-form textarea { border:1px solid var(--line); border-radius:4px; padding:11px 12px; background:var(--paper); color:var(--ink); resize:vertical; }
+    .order-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:8px; }
+    .modal-close { border:1px solid var(--line); background:transparent; padding:12px 16px; border-radius:4px; }
+    .modal-send { border:0; background:var(--ink); color:var(--paper); padding:12px 16px; border-radius:4px; font-weight:700; }
+    .payment-note { background:#eef5ce; padding:11px 12px; font-size:12px; line-height:1.45; margin-bottom:16px; }
+    .order-step { display:none; }
+    .order-step.active { display:block; }
+    .step-actions { display:flex; justify-content:space-between; gap:10px; margin-top:20px; }
+    .step-next { margin-left:auto; border:0; background:var(--ink); color:var(--paper); padding:12px 16px; border-radius:4px; font-weight:700; }
+    .mercado-pago { background:#ffe600; color:#1f3c88; border-radius:6px; padding:18px; margin:18px 0; }
+    .mercado-pago strong { color:#1f3c88; }
+    .mercado-pago p { margin:7px 0 0; font-size:13px; line-height:1.45; }
+    .payment-data { background:#fff; border-radius:5px; padding:12px; margin-top:12px; display:grid; gap:5px; font-size:14px; }
+    .payment-data span { color:#52627a; font-size:12px; }
+    @media (max-width:850px) { .shell { padding:0 20px; } .nav a { display:none; } header { min-height:0; } .hero { grid-template-columns:1fr; padding:60px 0 72px; gap:32px; } .hero-visual { min-height:270px; } .hero-visual img { max-width:340px; } .product-grid { grid-template-columns:repeat(2,1fr); gap:30px 16px; } .section-heading, .manifesto-inner, .footer-inner { display:block; } .section-heading p { margin-top:16px; } .manifesto p { margin-top:22px; } .footer-inner > div:last-child { margin-top:25px; } }
+    @media (max-width:480px) { h1 { letter-spacing:-2px; } .hero-copy { font-size:15px; } .product-grid { grid-template-columns:1fr 1fr; } .product-image { aspect-ratio:1/.98; } .product h3 { font-size:14px; } .product .meta { font-size:12px; } .controls { gap:8px; } .filter { padding:10px 11px; font-size:13px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <nav class="topbar" aria-label="Navegación principal">
+        <a class="logo" href="#inicio">almendra<span>.</span></a>
+        <div class="nav"><a href="#coleccion">Colección</a><a href="#historia">La idea</a><button class="cart-button" id="cartButton" type="button" aria-label="Abrir carrito"><span class="cart-icon" aria-hidden="true">🛒</span><span class="cart-count" id="cartCount">0</span></button></div>
+      </nav>
+      <div class="hero" id="inicio">
+        <div>
+          <p class="eyebrow">Calzado que te sigue el ritmo</p>
+          <h1>Elegí tu forma de caminar.</h1>
+          <p class="hero-copy">Modelos cómodos, colores que combinan con todo y ese detalle que hace que un par se sienta tuyo.</p>
+          <div class="hero-actions"><a class="primary" href="#coleccion">Ver colección</a><a class="secondary" href="#historia">Conocé Almendra</a></div>
+        </div>
+        <div class="hero-visual"><img src="../Organizadas por modelo/HERMES LISO/WhatsApp Image 2026-09-16 at 11.22.29 AM (1).jpeg" alt="Modelo Hermes Liso de Almendra Store"><div class="hero-tag">NUEVA<br>COLECCIÓN<br>2027</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="store shell" id="coleccion">
+      <div class="section-heading"><div><p class="eyebrow" style="color:var(--orange)">La selección</p><h2>Calzado para hoy<br>y para todos los días.</h2></div><p>Explorá la colección, elegí tus modelos y completá el pedido con tus datos de entrega.</p></div>
+      <div class="controls" aria-label="Filtros de productos"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar un modelo..." aria-label="Buscar un modelo"></label><button class="filter active" data-filter="Todos" type="button">Todo</button><button class="filter" data-filter="Sandalias" type="button">Sandalias</button><button class="filter" data-filter="Brillo" type="button">Brillo</button><button class="filter" data-filter="EVA" type="button">EVA</button><button class="filter" data-filter="Hombre" type="button">Hombre</button><button class="filter" data-filter="Niños" type="button">Niños</button></div>
+      <div class="product-grid" id="productGrid"></div><div class="empty" id="empty">No encontramos ese modelo. Probá con otra palabra.</div>
+    </section>
+    <section class="manifesto" id="historia"><div class="shell manifesto-inner"><h2>Menos ruido.<br>Más vos.</h2><p>Almendra nace para encontrar esos pares que se vuelven parte de tu rutina: simples, cancheros y listos para acompañarte. Más adelante también vas a encontrar ropa elegida con la misma mirada.</p></div></section>
+  </main>
+  <footer><div class="shell footer-inner"><div><a class="logo" href="#inicio">almendra<span>.</span></a><p>Calzado y próximamente ropa.<br>Buenos Aires, Argentina.</p></div><div><p>¿Listo para pedir?</p><a class="contact" href="#coleccion">Elegí tus modelos y armá tu pedido ↗</a></div></div></footer>
+  <dialog id="orderDialog"><div class="order-modal"><div class="order-step active" data-step="1"><p class="step-label">Paso 1 de 3</p><h2>Revisá tu pedido</h2><p>Elegí cuántas unidades querés y verificá el costo de envío.</p><div class="order-lines" id="orderLines"></div><div class="order-summary-line"><span>Envío</span><strong id="shippingCost"></strong></div><div class="order-total"><span>Total estimado</span><span id="orderTotal"></span></div><div class="step-actions"><button class="modal-close" id="closeDialog" type="button">Cerrar</button><button class="step-next" id="toCustomer" type="button">Continuar con mis datos</button></div></div><div class="order-step" data-step="2"><p class="step-label">Paso 2 de 3</p><h2>Datos de entrega</h2><p>Los necesitamos para coordinar el envío de tu pedido.</p><form class="order-form" id="orderForm"><label>Nombre y apellido<input name="name" required autocomplete="name"></label><label>Teléfono<input name="phone" required type="tel" autocomplete="tel"></label><label>Calle y número<input name="street" required autocomplete="street-address"></label><label>Localidad<input name="locality" required autocomplete="address-level2"></label><label>Código postal (opcional)<input name="postalCode" autocomplete="postal-code"></label><label>Preferencia de entrega<select name="deliveryTime" required><option value="">Elegí una opción</option><option>Por la mañana</option><option>Por la tarde</option></select></label><label>Notas del pedido <textarea name="notes" rows="2" placeholder="Talle, color u otra indicación"></textarea></label><div class="step-actions"><button class="modal-close" id="backToSummary" type="button">Volver</button><button class="step-next" type="submit">Continuar al pago</button></div></form></div><div class="order-step" data-step="3"><p class="step-label">Paso 3 de 3</p><h2>Pago por Mercado Pago</h2><p>Para reservar el envío, aboná la seña y mandanos el comprobante.</p><div class="mercado-pago"><strong>Mercado Pago</strong><p>El envío se abona por adelantado como seña. El saldo del calzado se paga contra entrega.</p><div class="payment-data"><span>Alias de pago</span><strong id="paymentAlias"></strong><span>Titular</span><strong id="paymentHolder"></strong></div></div><div class="order-summary-line"><span>Total del calzado + envío</span><strong id="paymentTotal"></strong></div><div class="step-actions"><button class="modal-close" id="backToCustomer" type="button">Volver</button><button class="modal-send" id="sendOrder" type="button">Enviar pedido por WhatsApp ↗</button></div></div></div></dialog>
+  <button class="floating-cart" id="floatingCart" type="button" aria-label="Abrir carrito"><span class="cart-icon" aria-hidden="true">🛒</span><span class="cart-count" id="floatingCartCount">0</span></button>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    const SALE_MARGIN = 0.30;
+    const products = [
+      { name:'Alana', type:'EVA', colors:'Beige · Negro · Blanco', cost:null, image:'../Organizadas por modelo/ALANA/WhatsApp Image 2026-09-16 at 11.22.32 AM (1).jpeg', badge:'Nuevo' },
+      { name:'Brick', type:'Sandalias', colors:'Negro · Suela · Choco · Verde', cost:8000, image:'../Organizadas por modelo/BRICK/WhatsApp Image 2026-09-16 at 11.25.29 AM.jpeg', badge:'Nuevo' },
+      { name:'Dante Niño', type:'Niños', colors:'Beige · Blanco · Negro', cost:null, image:'../Organizadas por modelo/DANTE NINO/WhatsApp Image 2026-09-16 at 11.25.31 AM (1).jpeg', badge:'Nuevo' },
+      { name:'Fajin Glitter', type:'Brillo', colors:'Negro · Plata · Oro', cost:6000, image:'../Organizadas por modelo/FAJIN GLITTER/WhatsApp Image 2026-09-16 at 11.22.29 AM (3).jpeg', badge:'' },
+      { name:'Fajin Liso', type:'Sandalias', colors:'Negro · Beige · Choco', cost:4500, image:'../Organizadas por modelo/FAJIN LISO/WhatsApp Image 2026-09-16 at 11.22.24 AM (3).jpeg', badge:'' },
+      { name:'Gomon EVA Dama', type:'EVA', colors:'Negro · Beige · Suela', cost:5000, image:'../Organizadas por modelo/GOMON EVA DAMA/WhatsApp Image 2026-09-16 at 11.22.26 AM (1).jpeg', badge:'Precio tentativo' },
+      { name:'Hermes Glitter', type:'Brillo', colors:'Negro · Beige · Plata', cost:6000, image:'../Organizadas por modelo/HERMES GLITTER/WhatsApp Image 2026-09-16 at 11.22.28 AM (1).jpeg', badge:'' },
+      { name:'Hermes Liso', type:'Sandalias', colors:'Negro · Beige · Choco', cost:8000, image:'../Organizadas por modelo/HERMES LISO/WhatsApp Image 2026-09-16 at 11.22.29 AM (1).jpeg', badge:'' },
+      { name:'Karey', type:'Sandalias', colors:'Choco · Negro', cost:13000, image:'../Organizadas por modelo/KAREY/WhatsApp Image 2026-09-16 at 11.48.04 AM (1).jpeg', badge:'' },
+      { name:'Lunai', type:'EVA', colors:'Beige · Rosa · Negro', cost:null, image:'../Organizadas por modelo/LUNAI/WhatsApp Image 2026-09-16 at 11.25.55 AM (3).jpeg', badge:'Nuevo' },
+      { name:'Navidad', type:'Brillo', colors:'Negro · Beige · Rosa · Plata', cost:6000, image:'../Organizadas por modelo/NAVIDAD/WhatsApp Image 2026-09-16 at 11.45.43 AM (1).jpeg', badge:'' },
+      { name:'Ojota EVA Dama', type:'EVA', colors:'Negro · Blanco', cost:null, image:'../Organizadas por modelo/OJOTA EVA DAMA/WhatsApp Image 2026-09-16 at 11.22.25 AM (1).jpeg', badge:'Nuevo' },
+      { name:'Ojotin Glitter', type:'Brillo', colors:'Negro · Plata · Oro', cost:6000, image:'../Organizadas por modelo/OJOTIN GLITTER/WhatsApp Image 2026-09-16 at 11.48.05 AM (2).jpeg', badge:'' },
+      { name:'Ojotin Liso', type:'Sandalias', colors:'Negro · Beige · Choco', cost:4500, image:'../Organizadas por modelo/OJOTIN LISO/WhatsApp Image 2026-09-16 at 11.22.24 AM (1).jpeg', badge:'' },
+      { name:'Sara Glitter', type:'Brillo', colors:'Negro · Plata · Oro · Rosa', cost:11500, image:'../Organizadas por modelo/SARA GLITTER/WhatsApp Image 2026-09-16 at 11.48.05 AM (10).jpeg', badge:'Precio tomado de Zara Glitter' },
+      { name:'Urban Hombre', type:'Hombre', colors:'Beige · Negro · Gris', cost:null, image:'../Organizadas por modelo/URBAN HOMBRE/WhatsApp Image 2026-09-16 at 11.22.27 AM (1).jpeg', badge:'Nuevo' }
+    ];
+    products.forEach(product => { product.price = product.cost === null ? null : Math.round(product.cost * (1 + SALE_MARGIN)); });
+    const SHIPPING_COST = 3500;
+    const MERCADO_PAGO_ALIAS = 'ALMENDRA.STORE';
+    const MERCADO_PAGO_HOLDER = 'Almendra Store';
+    let selected = [];
+    let currentStep = 1;
+    let customerData = null;
+    const grid = document.querySelector('#productGrid');
+    const empty = document.querySelector('#empty');
+    const money = value => `$${value.toLocaleString('es-AR')}`;
+    const render = () => { const query = document.querySelector('#search').value.toLowerCase(); const filter = document.querySelector('.filter.active').dataset.filter; const visible = products.filter(p => (filter === 'Todos' || p.type === filter) && (p.name.toLowerCase().includes(query) || p.colors.toLowerCase().includes(query))); grid.innerHTML = visible.map(p => `<article class="product"><div class="product-image"><img loading="lazy" src="${p.image}" alt="Modelo ${p.name}">${p.badge ? `<span class="badge">${p.badge}</span>` : ''}</div><div class="product-info"><div><h3>${p.name}</h3><div class="meta">${p.colors}</div><div class="meta"><strong>${p.price === null ? 'Consultar precio' : money(p.price)}</strong></div></div><button class="ask" type="button" aria-label="${p.price === null ? 'Precio a consultar para' : 'Agregar'} ${p.name} al pedido" data-product="${p.name}"${p.price === null ? ' disabled' : ''}>${p.price === null ? '?' : '+'}</button></div></article>`).join(''); empty.style.display = visible.length ? 'none' : 'block'; document.querySelectorAll('.ask:not(:disabled)').forEach(button => button.addEventListener('click', () => addProduct(button.dataset.product))); };
+    const addProduct = name => { selected.push(name); document.querySelector('#cartCount').textContent = selected.length; document.querySelector('#floatingCartCount').textContent = selected.length; const toast = document.querySelector('#toast'); toast.textContent = `${name} agregado al pedido`; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2200); };
+    const getCart = () => products.map(product => ({ product, quantity: selected.filter(name => name === product.name).length })).filter(item => item.quantity);
+    const cartTotal = () => getCart().reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+    const updateCartCounters = () => { document.querySelector('#cartCount').textContent = selected.length; document.querySelector('#floatingCartCount').textContent = selected.length; };
+    const renderOrderSummary = () => { const lines = getCart().map(({ product, quantity }) => `<div class="order-line"><span>${product.name}<br><small>${money(product.price)} c/u</small></span><div class="quantity"><button type="button" data-action="decrease" data-product="${product.name}" aria-label="Quitar una unidad de ${product.name}">−</button><strong>${quantity}</strong><button type="button" data-action="increase" data-product="${product.name}" aria-label="Agregar una unidad de ${product.name}">+</button></div><strong>${money(product.price * quantity)}</strong></div>`).join(''); document.querySelector('#orderLines').innerHTML = lines; document.querySelector('#shippingCost').textContent = money(SHIPPING_COST); document.querySelector('#orderTotal').textContent = money(cartTotal() + SHIPPING_COST); document.querySelector('#paymentTotal').textContent = money(cartTotal() + SHIPPING_COST); document.querySelector('#paymentAlias').textContent = MERCADO_PAGO_ALIAS; document.querySelector('#paymentHolder').textContent = MERCADO_PAGO_HOLDER; document.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', () => { const name = button.dataset.product; if (button.dataset.action === 'increase') selected.push(name); else { const index = selected.indexOf(name); if (index > -1) selected.splice(index, 1); } updateCartCounters(); if (!selected.length) { document.querySelector('#orderDialog').close(); return; } renderOrderSummary(); })); };
+    const showStep = step => { currentStep = step; document.querySelectorAll('.order-step').forEach(item => item.classList.toggle('active', item.dataset.step === String(step))); if (step === 1) renderOrderSummary(); };
+    const openOrder = () => { if (!selected.length) { const toast = document.querySelector('#toast'); toast.textContent = 'Agregá un producto para iniciar el pedido'; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2200); return; } showStep(1); document.querySelector('#orderDialog').showModal(); };
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('.filter').forEach(item => item.classList.remove('active')); button.classList.add('active'); render(); }));
+    document.querySelector('#search').addEventListener('input', render);
+    document.querySelector('#cartButton').addEventListener('click', openOrder);
+    document.querySelector('#floatingCart').addEventListener('click', openOrder);
+    document.querySelector('#closeDialog').addEventListener('click', () => document.querySelector('#orderDialog').close());
+    document.querySelector('#toCustomer').addEventListener('click', () => showStep(2));
+    document.querySelector('#backToSummary').addEventListener('click', () => showStep(1));
+    document.querySelector('#orderForm').addEventListener('submit', event => { event.preventDefault(); customerData = new FormData(event.target); showStep(3); });
+    document.querySelector('#backToCustomer').addEventListener('click', () => showStep(2));
+    document.querySelector('#sendOrder').addEventListener('click', () => { const total = cartTotal(); const lines = getCart().map(({ product, quantity }) => `- ${quantity} x ${product.name}: ${money(product.price * quantity)}`).join('\n'); const text = `Hola Almendra, quiero hacer este pedido:\n${lines}\nSubtotal del calzado: ${money(total)}\nCosto de envío: ${money(SHIPPING_COST)}\nTotal estimado: ${money(total + SHIPPING_COST)}\n\nNombre: ${customerData.get('name')}\nTeléfono: ${customerData.get('phone')}\nCalle y número: ${customerData.get('street')}\nLocalidad: ${customerData.get('locality')}\nCódigo postal: ${customerData.get('postalCode') || 'No informado'}\nPreferencia de entrega: ${customerData.get('deliveryTime')}\nNotas: ${customerData.get('notes') || 'Sin notas'}\n\nAlias de Mercado Pago: ${MERCADO_PAGO_ALIAS}\nAcepto abonar el envío por adelantado como seña y pagar el saldo del calzado contra entrega.`; window.open(`https://wa.me/5491100000000?text=${encodeURIComponent(text)}`, '_blank'); });
+    render();
+  </script>
+</body>
+</html>

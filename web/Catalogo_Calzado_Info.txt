@@ -1,0 +1,220 @@
+=================================================================
+CATÁLOGO DE CALZADO - INFORMACIÓN COMPLETA (VERANO 2027 / 2026)
+=================================================================
+NOTA: Todos los precios indicados son PRECIO DE COMPRA (COSTO),
+NO precio de venta al público.
+=================================================================
+
+-----------------------------------------------------------------
+LÍNEA: MODELOS INYECTADOS (incluye Zapatillas)
+-----------------------------------------------------------------
+
+1) HERMES LISO
+Colores: Negro, Beige, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $8.000
+
+2) KAREY
+Colores: Choco, Negro
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $13.000
+
+3) HERMES GLITTER
+Colores: Negro, Beige, Plata
+Tarea: 12 pares
+Talles/Medidas (cm): 35=23.1 | 36=23.7 | 37=24.3 | 38=25.0 | 39=25.7 | 40=26.4 | 41=27.0
+Precio de costo: $6.000
+
+4) FAJIN GLITTER
+Colores: Negro, Plata, Oro
+Tarea: 12 pares
+Talles/Medidas (cm): 35=23.1 | 36=23.7 | 37=24.3 | 38=25.0 | 39=25.7 | 40=26.4
+Precio de costo: $6.000
+
+5) CLEOPATRA
+Colores: Negro, Verde, Suela, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $8.000
+Nota: no figura "CLEOPATRA" en Precios.txt; precio tomado de "CLEO LISO" — confirmar si es el mismo modelo.
+
+6) BRICK
+Colores: Negro, Suela, Choco, Verde
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $8.000
+Nota: precio tomado de "BRICK LISO".
+
+7) OJOTIN LISO
+Colores: Negro, Beige, Choco
+Tarea: 12 pares
+Talles/Medidas (cm): 35=23.1 | 36=23.7 | 37=24.3 | 38=25.0 | 39=25.7 | 40=26.4
+Precio de costo: $4.500
+
+8) LUPE LISO
+Colores: Negro, Choco, Beige, Hueso
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $11.500
+
+9) FAJIN LISO
+Colores: Negro, Beige, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35=23.1 | 36=23.7 | 37=24.3 | 38=25.0 | 39=25.7 | 40=26.4
+Precio de costo: $4.500
+
+10) FRANCISCANA
+Colores: Beige, Negro, Hueso, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $11.500
+Nota: precio tomado de "FRANCISCANA ABIERTA".
+
+11) FRANCISCANA VANTY LISO
+Colores: Negro, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $11.500
+Nota: precio tomado de "VANTI" (la lista dice VANTI, la foto dice VANTY) — confirmar si es el mismo modelo.
+
+12) ADILETTE
+Colores: Choco, Beige, Negro
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $9.000
+Nota: precio tomado de "ADILETTE PRINT".
+
+13) SARA GLITTER
+Colores: Negro/Plata, Plata, Oro, Rosa, Negro
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $11.500
+Nota: no figura "SARA GLITTER" en Precios.txt; precio tomado de "ZARA GLITTER" (posible error de tipeo Sara/Zara) — confirmar.
+
+14) NAVIDAD
+Colores: Negro, Beige, Rosa, Plata
+Tarea: 12 pares
+Talles/Medidas (cm): 35=23.1 | 36=23.7 | 37=24.3 | 38=25.0 | 39=25.7 | 40=26.4
+Precio de costo: $6.000
+
+15) OJOTIN GLITTER
+Colores: Negro, Plata, Oro
+Tarea: 12 pares
+Talles/Medidas (cm): 35=23.1 | 36=23.7 | 37=24.3 | 38=25.0 | 39=25.7 | 40=26.4
+Precio de costo: $6.000
+
+16) FRANCISCANA VANTY CAREY
+Colores: Negro, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $13.000
+Nota: precio tomado de "VANTI KAREY".
+
+17) DOUFUR
+Colores: Negro, Choco, Verde, Beige, Suela
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $12.500
+
+18) MÓNACO
+Colores: Negro, Choco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $7.500
+Nota: precio tomado de "MONACO".
+
+19) TACO CHINO LISO (zapatilla)
+Colores: Negro/Negro, Negro/Blanco, Beige, Blanco
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $16.000
+
+20) TACO CHINO METAL (zapatilla)
+Colores: Plata, Oro
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $17.000
+
+21) LALI (zapatilla)
+Colores: Negro, Blanco, Chocolate, Beige
+Tarea: 8 pares
+Talles/Medidas (cm): 35/6=23.5 | 37=24.3 | 38=25.0 | 39/0=25.7
+Precio de costo: $16.000
+
+-----------------------------------------------------------------
+LÍNEA: MODELOS EN GOMA EVA
+-----------------------------------------------------------------
+
+22) ALANA
+Colores: Beige, Negro, Blanco
+Tarea: 6 pares
+Talles/Cantidades/Medida: 35/36=2 pares=23.5 cm | 37/38=2 pares=24.5 cm | 39/40=2 pares=25.5 cm
+Precio de costo: SIN PRECIO — no encontrado en Precios.txt
+
+23) GOMON EVA - DAMA
+Colores: Negro, Beige, Suela
+Tarea: 12 pares
+Talles/Cantidades/Medida: 35/6=3 pares=23.5 cm | 37/8=6 pares=24.5 cm | 39/0=3 pares=25.5 cm
+Precio de costo: $5.000 (tentativo)
+Nota: no figura "GOMON EVA" en Precios.txt; hay "GOMON LISO" a $5.000, pero podría ser otro material/línea — confirmar.
+
+24) LUNAI
+Colores: Beige, Rosa, Negro
+Tarea: 12 pares
+Talles/Cantidades/Medida: 34/5=2 pares=22.5 cm | 36/7=4 pares=23.5 cm | 38/9=4 pares=24.5 cm | 40/1=2 pares=25.5 cm
+Precio de costo: SIN PRECIO — no encontrado en Precios.txt
+
+25) DANTE — Niño
+Colores: Beige, Blanco, Negro (con aplique surtido dentro de la tarea)
+Tarea: 6 pares
+Talles/Cantidades/Medida: 24/25=1 par=16 cm | 26/27=1 par=17 cm | 28/29=1 par=18 cm | 30/31=1 par=19 cm | 32/33=1 par=20 cm | 33/34=1 par=21 cm
+Precio de costo: SIN PRECIO — línea de niño, no encontrado en Precios.txt
+
+26) OJOTA EVA — Hombre
+Colores: Negro, Celeste
+Tarea: 6 pares
+Talles/Cantidades/Medida: 40/41=2 pares=26.5 cm | 42/43=2 pares=27.5 cm | 44/45=2 pares=29 cm
+Precio de costo: SIN PRECIO — línea de hombre, no encontrado en Precios.txt
+
+27) CROCS — Hombre
+Colores: Negro
+Tarea: 6 pares
+Talles/Cantidades/Medida: 40/41=2 pares=26.5 cm | 42/43=2 pares=27.5 cm | 44/45=2 pares=29 cm
+Precio de costo: SIN PRECIO — línea de hombre, no encontrado en Precios.txt
+
+28) OJOTA EVA — Dama
+Colores: Negro, Blanco
+Tarea: 6 pares
+Talles/Cantidades/Medida: 35/36=2 pares=24 cm | 37/38=2 pares=25 cm | 39/40=2 pares=26 cm
+Precio de costo: SIN PRECIO — no encontrado en Precios.txt
+
+29) GOMON EVA — Hombre
+Colores: Negro
+Tarea: 12 pares
+Talles/Cantidades/Medida: 40/41=2 pares=26.5 cm | 42/43=2 pares=27.5 cm | 44/45=2 pares=29 cm
+Precio de costo: $5.000 (tentativo)
+Nota: línea de hombre; hay "GOMON LISO" a $5.000 en la lista, pero podría ser otro material/línea — confirmar.
+
+30) URBAN — Hombre
+Colores: Beige, Negro, Gris
+Tarea: 6 pares
+Talles/Cantidades/Medida: 40/41=2 pares=26.5 cm | 42/43=2 pares=27.5 cm | 44/45=2 pares=29 cm
+Precio de costo: SIN PRECIO — línea de hombre, no encontrado en Precios.txt
+
+=================================================================
+RESUMEN DE PRECIOS PENDIENTES DE CONFIRMAR
+=================================================================
+- CLEOPATRA (cruzado con CLEO LISO)
+- FRANCISCANA VANTY LISO (cruzado con VANTI)
+- SARA GLITTER (cruzado con ZARA GLITTER)
+- GOMON EVA DAMA (tentativo $5.000, cruzado con GOMON LISO)
+- GOMON EVA HOMBRE (tentativo $5.000, cruzado con GOMON LISO)
+- ALANA — sin precio
+- LUNAI — sin precio
+- DANTE (Niño) — sin precio
+- OJOTA EVA Hombre — sin precio
+- CROCS Hombre — sin precio
+- OJOTA EVA Dama — sin precio
+- URBAN Hombre — sin precio
