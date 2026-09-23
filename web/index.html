@@ -103,7 +103,7 @@ src="https://www.facebook.com/tr?id=1932080078197189&ev=PageView&noscript=1"
     .footer-inner { display:flex; justify-content:space-between; gap:30px; align-items:start; }
     footer p { color:#d9d0c7; font-size:14px; line-height:1.6; max-width:300px; margin:12px 0 0; }
     .contact { color:var(--sand); text-decoration:none; font-weight:700; }
-    .toast { position:fixed; left:50%; bottom:24px; transform:translate(-50%,120px); background:var(--ink); color:var(--paper); padding:15px 20px; border-radius:5px; box-shadow:0 8px 30px rgba(0,0,0,.18); transition:transform .25s ease; z-index:5; }
+    .toast { position:fixed; left:50%; bottom:32px; transform:translate(-50%,140px); width:min(390px,calc(100% - 32px)); background:var(--brand-deep); color:var(--paper-strong); padding:18px 24px; border:2px solid var(--sand); border-radius:8px; box-shadow:0 12px 34px rgba(68,27,27,.35); text-align:center; font-size:16px; font-weight:700; line-height:1.35; transition:transform .25s ease; z-index:6; }
     .toast.show { transform:translate(-50%,0); }
     dialog { border:0; padding:0; width:min(520px,calc(100% - 32px)); border-radius:8px; color:var(--ink); background:var(--white); box-shadow:0 20px 70px rgba(0,0,0,.3); }
     dialog::backdrop { background:rgba(32,32,29,.7); }
@@ -194,7 +194,7 @@ src="https://www.facebook.com/tr?id=1932080078197189&ev=PageView&noscript=1"
       { name:'Urban Hombre', type:'Hombre', colors:'Beige · Negro · Gris', cost:null, image:'images/urban-hombre.jpeg', badge:'Nuevo' }
     ];
     products.forEach(product => { product.price = product.cost === null ? null : Math.round(product.cost * (1 + SALE_MARGIN)) + 500; });
-    const SHIPPING_COST = 3500;
+    const SHIPPING_COST = 5000;
     const WHATSAPP_NUMBER = '5491144293507';
     const MERCADO_PAGO_ALIAS = 'ALMENDRA.STORE';
     const MERCADO_PAGO_HOLDER = 'Almendra Store';
